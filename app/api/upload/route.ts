@@ -15,9 +15,9 @@ export async function POST(req: Request) {
 
   try {
     const formData = await req.formData()
-    const file = formData.get("file") as Blob
+    const file = formData.get("file")
 
-    if (!file || !file.type.startsWith("audio/")) {
+    if (!file || !(file instanceof File))  {
       return NextResponse.json({ error: "Invalid audio file" }, { status: 400 })
     }
 
