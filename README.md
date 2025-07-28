@@ -29,7 +29,7 @@ This project uses environment variables to manage sensitive information and conf
 
 Here's an example `.env` file with all the necessary variables:
 
-    ```ini
+```ini
     # Clerk Authentication
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
     CLERK_SECRET_KEY=sk_test_YOUR_CLERK_SECRET_KEY
@@ -51,7 +51,7 @@ Here's an example `.env` file with all the necessary variables:
 
     # Database (Prisma/PostgreSQL)
     DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
-    
+```
 ### Where to Get Your Variable Values:
 
 * **Clerk**: Obtain your keys (`PUBLISHABLE_KEY`, `SECRET_KEY`, `SIGNING_SECRET`) from your [Clerk Dashboard](https://dashboard.clerk.com/).
