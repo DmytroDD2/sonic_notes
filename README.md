@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Voice-to-Text SaaS Application
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) application with **TypeScript** support, providing Voice-to-Text functionality as a SaaS (Software as a Service). It allows users to create accounts, upload audio files for transcription, track their transcription history, and manage payments via Stripe.
 
-First, run the development server:
+**View Demo:** [https://sonic-notes.vercel.app](https://sonic-notes.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Framework**: [Next.js](https://nextjs.org)
+* **Language**: TypeScript
+* **UI/UX**: [Tailwind CSS](https://tailwindcss.com/) or [shadcn/ui](https://ui.shadcn.com/) for styling and components.
+* **Authentication**: [Clerk](https://clerk.com/) for user management and middleware (or decorators).
+* **Database**: [PostgreSQL](https://www.postgresql.org/)
+* **ORM**: [Prisma](https://www.prisma.io/) for database interaction.
+* **Voice-to-Text API**: OpenAI API, Llama, or another chosen service for speech-to-text conversion.
+* **Payments**: [Stripe](https://stripe.com/) for handling one-time payments.
+* **Deployment**: [Vercel](https://vercel.com/) or [AWS](https://aws.amazon.com/)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables (`.env` file)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses environment variables to manage sensitive information and configuration settings. These variables are stored in a `.env` file at the root of your project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Important:** You **must** create and configure your `.env` file **before** running the project. If the file is missing or variables aren't set, the application won't function correctly. **Never commit your `.env` file directly to a public repository!** Instead, use a `.env.example` file (without sensitive values) for version control and provide instructions for setting up the actual `.env` file.
 
-## Deploy on Vercel
+Here's an example `.env` file with all the necessary variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ini
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
+CLERK_SECRET_KEY=sk_test_YOUR_CLERK_SECRET_KEY
+SIGNING_SECRET=whsec_YOUR_CLERK_WEBHOOK_SECRET
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Voice-to-Text API 
+
+# Hugging Face:
+# HF_TOKEN=hf_YOUR_HUGGINGFACE_TOKEN
+
+# Stripe Payments
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_test_YOUR_STRIPE_PUBLISHABLE_KEY
+STRIPE_SECRET_KEY=sk_test_YOUR_STRIPE_SECRET_KEY
+NEXT_PUBLIC_APP_URL=http://localhost:3000 # Or your deployed site's URL, e.g., [https://your-app.vercel.app](https://your-app.vercel.app)
+STRIPE_WEBHOOK_SECRET=whsec_YOUR_STRIPE_WEBHOOK_SECRET
+STRIPE_PRICE_ID=price_YOUR_STRIPE_PRICE_ID
+
+# Database (Prisma/PostgreSQL)
+DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
