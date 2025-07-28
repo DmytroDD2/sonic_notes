@@ -30,27 +30,27 @@ This project uses environment variables to manage sensitive information and conf
 Here's an example `.env` file with all the necessary variables:
 
     ```ini
-        # Clerk Authentication
-        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
-        CLERK_SECRET_KEY=sk_test_YOUR_CLERK_SECRET_KEY
-        SIGNING_SECRET=whsec_YOUR_CLERK_WEBHOOK_SECRET
-        NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
-        NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+    # Clerk Authentication
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
+    CLERK_SECRET_KEY=sk_test_YOUR_CLERK_SECRET_KEY
+    SIGNING_SECRET=whsec_YOUR_CLERK_WEBHOOK_SECRET
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 
-        # Voice-to-Text API 
+    # Voice-to-Text API 
 
-        # Hugging Face:
-        # HF_TOKEN=hf_YOUR_HUGGINGFACE_TOKEN
+    # Hugging Face:
+    # HF_TOKEN=hf_YOUR_HUGGINGFACE_TOKEN
 
-        # Stripe Payments
-        NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_test_YOUR_STRIPE_PUBLISHABLE_KEY
-        STRIPE_SECRET_KEY=sk_test_YOUR_STRIPE_SECRET_KEY
-        NEXT_PUBLIC_APP_URL=http://localhost:3000 # Or your deployed site's URL, e.g., [https://your-app.vercel.app](https://your-app.vercel.app)
-        STRIPE_WEBHOOK_SECRET=whsec_YOUR_STRIPE_WEBHOOK_SECRET
-        STRIPE_PRICE_ID=price_YOUR_STRIPE_PRICE_ID
+    # Stripe Payments
+    NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_test_YOUR_STRIPE_PUBLISHABLE_KEY
+    STRIPE_SECRET_KEY=sk_test_YOUR_STRIPE_SECRET_KEY
+    NEXT_PUBLIC_APP_URL=http://localhost:3000 # Or your deployed site's URL, e.g., [https://your-app.vercel.app](https://your-app.vercel.app)
+    STRIPE_WEBHOOK_SECRET=whsec_YOUR_STRIPE_WEBHOOK_SECRET
+    STRIPE_PRICE_ID=price_YOUR_STRIPE_PRICE_ID
 
-        # Database (Prisma/PostgreSQL)
-        DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
+    # Database (Prisma/PostgreSQL)
+    DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
     ```
 ### Where to Get Your Variable Values:
 
