@@ -51,7 +51,7 @@ Here's an example `.env` file with all the necessary variables:
 
     # Database (Prisma/PostgreSQL)
     DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
-    ```
+    
 ### Where to Get Your Variable Values:
 
 * **Clerk**: Obtain your keys (`PUBLISHABLE_KEY`, `SECRET_KEY`, `SIGNING_SECRET`) from your [Clerk Dashboard](https://dashboard.clerk.com/).
@@ -96,3 +96,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Stripe One-Time Payment**: Implemented one-time payment functionality via Stripe (in test mode).
 - **Stripe Webhook Handling**: The application handles Webhook events from Stripe to confirm successful payments.
 - **Post-Payment Access**: After a successful Stripe payment, the user gains unlimited access to the Voice-to-Text functionality.
+
+
+
